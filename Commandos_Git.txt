@@ -1,6 +1,7 @@
 
 // Clona proyecto (respositorio)
 git clone https://github.com/jorgeemilianom/CursoArquitectura2024.git
+git clone https://github.com/jorgeemilianom/CursoArquitectura2024.git NombreCustom
 
 // Subir el proyecto o cambios
 git add .
