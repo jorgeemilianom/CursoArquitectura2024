@@ -1,9 +1,13 @@
 
 // Clona proyecto (respositorio)
-Git clone https://github.com/jorgeemilianom/CursoArquitectura2024.git
+git clone https://github.com/jorgeemilianom/CursoArquitectura2024.git
 
 // Subir el proyecto o cambios
 git add .
 git commit -m "Un comentario"
 git push
+
+// Actualizar cambios del repositorio (proyecto)
+git fetch
+git pull
 
