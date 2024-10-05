@@ -1,0 +1,75 @@
+
+Preguntas Claves:
+
+- ¿Cuál es el valor de un software?
+    * ¿Por qué contratarías a un desarrollador?
+
+- Dos valores centrales
+    * Comportamiento
+    * Arquitectura
+
+-  Matriz de Eisenhower 
+    * Urgente
+    * Importante
+Como una tabla de verdad
+0 0
+1 0
+0 1
+1 1
+
+- ¿Qué caracteriza a una buena arquitectura de
+software?
+    - Mientras menos codigo, menos escalable es
+    - LowCode no es bueno para desarrollo de productos (si para resolver un requerimiento puntual)
+
+- ¿Cómo diseñar una buena arquitectura de
+software?
+    - SOLID
+“Los principios SOLID nos dicen cómo organizar
+nuestras funciones y estructuras de datos en clases, y cómo esas clases deben estar
+interconectadas. El uso de la palabra "clase" no implica que estos principios sean aplicables
+únicamente al software orientado a objetos. Una clase es simplemente una agrupación
+acoplada de funciones y datos. Cada sistema de software tiene tales agrupaciones, se llamen
+clases o no. Los principios SOLID se aplican a esas agrupaciones.”
+    - ¿Cuales son estos principios?
+        ● SRP (Single-Responsability Principle): Cada clase debe tener un solo motivo para cambiar
+        ● OCP (Open/Closed Principle): Las clases deben ser abiertas para su extensión pero cerradas
+        para su modificación
+        ● LSP (Liskov Substitution Principle): Las clases que deban ser intercambiables deben adherirse a
+        un contrato común
+        ● ISP (Interface Segregation Principle): Es mejor tener muchas interfaces específicas que una
+        interfaz de uso general
+        ● DIP (Dependency Inversion Principle): Depende de abstracciones, no de implementaciones
+        concretas
+        
+
+- Buenas prácticas en general
+    - Implementacion de SOLID
+    - Agregar tipado de ser posible
+    - Control de excepciones
+        * Custom Exceptions
+    - Logs
+
+
+- Creación de negocios
+    - Uso de herramientas
+    - PHP es un lenguaje low cost
+    - PHP Lenguaje de uso general
+    - Se acopla MUY BIEN con otros lenguajes para generar productos
+    - Hablemos sobre algunas ideas de negocios
+    - No nos limitemos a codigo para generar negocios / productos. A veces el software es un derivado 
+        * Ejemplo, revender membresias de algo y generar un software para gestionar nuestras ventas
+
+
+- PHP y servidor 
+
+- Repaso de GIT
+    - Que son las branches
+    - Commits
+    - Traer cambios
+    - Subir cambios
+    - Merge
+    - Merge Conflicts
+
+
+- Desarrollo de un framework
