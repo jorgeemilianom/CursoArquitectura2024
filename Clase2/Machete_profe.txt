@@ -73,3 +73,9 @@ clases o no. Los principios SOLID se aplican a esas agrupaciones.”
 
 
 - Desarrollo de un framework
+- Tarea: Desarrollar un servicio en equipos de 2 (no obligatorio), un servicio que me facilite
+una tarea puntual. 
+Ejemplo:
+* MySQLService (una clase, que me permita conectar a la DB y me facilite la obtención de datos)
+* SQLiteService
+* No hay respuestas erroneas
