@@ -75,3 +75,36 @@ $estudiante1 = new Estudiante("Laura", 22, "Arquitectura Avanzada con PHP");
 $estudiante1->saludar(); // Salida: Hola, soy un estudiante y mi nombre es Laura. Estoy en el curso Arquitectura Avanzada con PHP.
 
 
+
+// Tarea propuesta
+
+class MySQLService
+{
+    private $db;
+
+    public function __construct() {
+        try {
+            $db_host = 'localhost';
+            $db_user = 'root';
+            $db_password = 'root';
+            $db_name = 'testDB';
+
+            $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+            if ($connection->connect_error)
+                throw new Exception('No se pudo conectar a la DB.');
+
+            $this->db = $connection;
+        } catch (\Throwable $th) {
+            die("Error DB");
+        }
+    }
+
+    public function execute(string $query) : array
+    {
+        $response = mysqli_query($this->db, $query);
+        return $response ? $response->fetch_all(MYSQLI_ASSOC) : [];
+    }
+}
+
+$db = new MySQLService();
+$db->execute("SELECT * FROM Users");

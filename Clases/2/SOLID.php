@@ -72,6 +72,8 @@ class Order
 
 // I - Interface Segregation Principle (ISP)
 // Las interfaces específicas son mejores que una sola interfaz general.
+// Este principio establece que una clase no debería estar obligada a implementar interfaces que no utiliza. 
+// Es decir, es preferible dividir una interfaz grande en varias interfaces más específicas que se adapten mejor a las necesidades de las clases.
 interface Printable
 {
     public function printDocument();
@@ -95,6 +97,19 @@ class Scanner implements Scannable
     public function scanDocument()
     {
         echo "Escaneando documento\n";
+    }
+}
+
+class MultiFunctionDevice implements Printable, Scannable
+{
+    public function printDocument()
+    {
+        echo "Imprimiendo documento en un dispositivo multifunción\n";
+    }
+
+    public function scanDocument()
+    {
+        echo "Escaneando documento en un dispositivo multifunción\n";
     }
 }
 
