@@ -101,10 +101,15 @@ class MySQLService
 
     public function execute(string $query) : array
     {
-        $response = mysqli_query($this->db, $query);
-        return $response ? $response->fetch_all(MYSQLI_ASSOC) : [];
+        try {
+            $response = mysqli_query($this->db, $query);
+            return $response ? $response->fetch_all(MYSQLI_ASSOC) : [];
+        } catch (\Throwable $th) {
+            // Log
+            return [];
+        }
     }
 }
 
 $db = new MySQLService();
-$db->execute("SELECT * FROM Users");
+$USERS = $db->execute("SELECT * FROM Users");

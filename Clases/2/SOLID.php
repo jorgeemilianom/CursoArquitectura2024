@@ -151,17 +151,7 @@ class Square extends Rectangle
     }
 }
 
-// Ejecución de ejemplos
-$emailSender = new EmailSender();
-$userRegistration = new UserRegistration($emailSender);
-$userRegistration->register("user@example.com", "password123");
 
-$creditCardPayment = new CreditCardPayment();
-$order = new Order($creditCardPayment);
-$order->process(100);
-
-$printer = new Printer();
-$printer->printDocument();
 
 $rectangle = new Rectangle();
 $rectangle->setWidth(4);
