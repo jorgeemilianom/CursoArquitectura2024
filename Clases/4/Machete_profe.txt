@@ -1,0 +1,14 @@
+MODULO 2 de alumni
+
+Tema principal "FrontController"
+    * Hablar sobre la arquitectura y resumen rapido de la teoria
+    * Configuramos docker en local para correr nuestro proyecto
+    * Configuramos nginx
+    * Ejemplos de manejo de rutas por defecto en PHP y servidor
+    * Creamos la estructura de nuestro framework base
+    * Desarrollo
+        - Kernel
+        - Services
+        - Controllers
+        - Config nginx para manejo de patron FrontController
+    * Diseño base de nuestra aplicacion

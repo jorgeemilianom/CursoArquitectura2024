@@ -1,0 +1,42 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0.37
+    container_name: curso_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: curso
+    volumes:
+      - ./Docker/mysql:/var/lib/mysql
+    networks:
+      - curso_arquitectura
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: curso_phpmyadmin
+    ports:
+      - 3001:80
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=curso_db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    networks:
+      - curso_arquitectura
+  php:
+    build: ./Docker/.
+    container_name: curso_php
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+      - phpmyadmin
+    volumes:
+      - ./:/var/www/html/
+    networks:
+      - curso_arquitectura
+networks:
+  curso_arquitectura:
+    name: curso_arquitectura
+    driver: bridge
