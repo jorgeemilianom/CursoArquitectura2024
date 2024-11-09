@@ -1,0 +1,18 @@
+MODULO 2 y 3 de alumni
+
+Tema principal "Middlewares y Routing"
+    * Repaso de lo desarrollado en la clase pasada
+    * Patrón de diseño Chain Of Responsability
+    * Teoría sobre Relaciones entre clases
+    * Middlewares
+        * Creamos uno para nuestra aplicación
+            * BackendMiddlewareService
+            * FrontendMiddlewareService
+    * Routing
+        * Hacemos un mapping de rutas
+        * Creamos un Storage Services
+            * MySQL
+            * SQLite
+            * Almacenamos las rutas en una tabla
+        * Match de rutas con db
+    * Polimorfismo
