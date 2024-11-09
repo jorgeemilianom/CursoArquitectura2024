@@ -15,4 +15,3 @@ Tema principal "Middlewares y Routing"
             * SQLite
             * Almacenamos las rutas en una tabla
         * Match de rutas con db
-    * Polimorfismo
