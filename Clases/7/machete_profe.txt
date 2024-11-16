@@ -1,0 +1,26 @@
+[15min]         Repaso clase
+[45min]         Composer
+    - composer.json
+    - psr-4
+    - namespace
+    - Alias
+    - Uso de librerias
+
+
+[15min]         PDO
+    - Teoria
+    - Creando Service
+[15min]         Mysqli
+    - Teoria
+[15min]         Break
+[15min]         Core-caché
+    - Creando un servicio que nos permite generar una caché fisica
+
+
+[15min]         Auth basica
+    - Login y persistencia de login en SESSION
+[25min]         Patrones de capa de datos
+    - Teoria y ejemplos a mano
+    - Adaptando nuestro proyecto a patron Repository
+    - ejemplos en Symfony
+[20min]         ABM Productos
