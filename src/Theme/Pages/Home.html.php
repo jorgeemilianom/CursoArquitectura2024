@@ -1,17 +1,11 @@
 <?php
 
-use Core\Services\Storage\MySQLPDOService;
-use Core\Services\Storage\MySQLService;
-use Core\Services\Storage\PostgreeSQLService;
-use Core\Services\Storage\SQLiteService;
+use Core\Services\Storage\ContextService;
 
-// $db = new MySQLPDOService();
-// $db = new MySQLService();
-// $db = new SQLiteService('proyecto.sql');
-// $db = new PostgreeSQLService();
+$Context = ContextService::getContext();
 
-// var_dump($db->query("SELECT * FROM users"));
 ?>
 
 
-hola esto es la home
+<h1><?= $Context->get('Home:Title:h1'); ?></h1>
+<h2><?= $Context->get('Home:Title:h2'); ?></h2>
