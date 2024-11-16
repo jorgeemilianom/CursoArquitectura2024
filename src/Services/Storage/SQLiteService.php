@@ -1,6 +1,9 @@
 <?php
 declare(strict_types= 1);
 
+namespace Core\Services\Storage;
+
+use SQLite3;
 
 final class SQLiteService
 {
@@ -9,10 +12,10 @@ final class SQLiteService
     public function __construct(string $name_db)
     {
         try {
-            $this->db = new \SQLite3($name_db);
+            $this->db = new SQLite3($name_db);
             
         } catch (\Throwable $th) {
-            throw;
+            throw $th;
         }
     }
 

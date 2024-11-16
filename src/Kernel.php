@@ -1,6 +1,10 @@
 <?php
 declare(strict_types= 1);
 
+namespace Core;
+
+use Core\Controllers\FrontController;
+
 final class Kernel
 {
     public function __construct() {
@@ -21,12 +25,6 @@ final class Kernel
         require './src/Configuration/defines.php';
         require './src/Configuration/functions.php';
 
-        # Services
-        require './src/Services/RequestService.php';
-        require './src/Services/ThemeImportService.php';
-
-        # Controllers
-        require './src/Controllers/FrontController.php';
     }
 
 }

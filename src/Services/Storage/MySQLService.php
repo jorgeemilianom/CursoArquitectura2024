@@ -1,6 +1,11 @@
 <?php
 declare(strict_types= 1);
 
+namespace Core\Services\Storage;
+
+use Exception;
+use mysqli;
+
 final class MySQLService
 {
     private $connection;

@@ -1,3 +1,11 @@
+<?php
+
+use Core\Services\Storage\ContextService;
 
 
-hola esto es la home
+$Context = ContextService::getContext();
+
+
+?>
+
+<h1><?= $Context->getData('Title'); ?></h1>
