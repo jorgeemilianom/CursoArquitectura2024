@@ -1,6 +1,6 @@
 {
     "version": "0.0.1",
-    "name": "curso",
+    "name": "curos-de-arquitectura/php",
     "description": "Curso de arquitectura avanzada con PHP",
     "type": "project",
     "license": "proprietary",
@@ -15,10 +15,12 @@
     },
     "require": {
         "php": "^7.4.0|^8.1",
+        "guzzlehttp/guzzle": "^7.9",
         "mercadopago/dx-php": "^2.2.1",
         "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
+        "mockery/mockery": "2.0.x-dev",
         "phpunit/phpunit": "^11.0@dev"
     }
 }

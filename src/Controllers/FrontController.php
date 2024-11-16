@@ -1,10 +1,20 @@
 <?php
 declare(strict_types= 1);
 
-class FrontController
+namespace Core\Controllers;
+
+use Core\Contracts\Interface\IController;
+use Core\Services\RequestService;
+
+class FrontController implements IController
 {
-    public function __construct() {
+    public function __construct()
+    {
         
+    }
+
+    public function run(): void
+    {
         RequestService::request('/', function () {
             ViewPage('Home');
         });
@@ -16,4 +26,6 @@ class FrontController
         
         echo 'Page Not Found';die;
     }
+
+
 }

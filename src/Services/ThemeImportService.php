@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Core\Services;
+
 class ThemeImportService
 {
     const HEAD = './src/Theme/Layout/Head.html.php';

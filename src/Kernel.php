@@ -1,18 +1,42 @@
 <?php
 declare(strict_types= 1);
 
+namespace Core;
+
+use Core\Controllers\BackendController;
+use Core\Controllers\FrontController;
+use Core\Services\Security\AuthMiddlewareService;
+use Core\Services\Security\BackendMiddlewareService;
+use Core\Services\Security\ExceptionMiddlewareService;
+
 final class Kernel
 {
     public function __construct() {
         $this->ImportDepenencies();
-
-        # Run the application
-        $this->RunApplication();
+        $ExceptionMiddlewareService = new ExceptionMiddlewareService();
+        $ExceptionMiddlewareService->run(function () { 
+            # Run the application
+            $this->RunApplication(); 
+        });
+        
     }
 
     public function RunApplication(): void 
     {
-        $FrontController = new FrontController();
+        try {
+            $Middleware = new BackendMiddlewareService();
+            $Middleware->run(function () {
+                $auth = new AuthMiddlewareService();
+                $BackendController = new BackendController();
+                $FrontController = new FrontController();
+
+                $auth->run(function () {});
+                $BackendController->run();
+                $FrontController->run();
+            });
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function ImportDepenencies(): void
@@ -20,13 +44,9 @@ final class Kernel
         # Config
         require './src/Configuration/defines.php';
         require './src/Configuration/functions.php';
-
-        # Services
-        require './src/Services/RequestService.php';
-        require './src/Services/ThemeImportService.php';
-
-        # Controllers
-        require './src/Controllers/FrontController.php';
+        
     }
 
 }
+
+

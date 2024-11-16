@@ -1,10 +1,16 @@
 <?php
 declare(strict_types= 1);
 
-final class MySQLService
-{
-    private $connection;
+namespace Core\Services\Storage;
 
+use Core\Contracts\Abstract\StorageAbstract;
+use Core\Contracts\Interface\IStorage;
+use Exception;
+use mysqli;
+use Throwable;
+
+final class MySQLService extends StorageAbstract implements IStorage
+{
     public function __construct()
     {
         try {
@@ -13,8 +19,8 @@ final class MySQLService
             if ($connection->connect_error)
                 throw new Exception('Could not connect to database.');
 
-            $this->connection = $connection;
-        } catch (\Throwable $th) {
+            $this->connectionManager = $connection;
+        } catch (Throwable $th) {
             
         }
     }
@@ -22,12 +28,12 @@ final class MySQLService
     public function query(string $query): array
     {
         try {
-            $response = mysqli_query($this->connection, $query);
+            $response = mysqli_query($this->connectionManager, $query);
 
             if(!$response) return [];
 
             return $response ? $response->fetch_all(MYSQLI_ASSOC) : [];
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             return [];
         }
     }

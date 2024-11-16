@@ -1,8 +1,19 @@
 <?php
+declare(strict_types=1);
 
-final class AuthMiddlewareService
+namespace Core\Services\Security;
+
+use Core\Contracts\Interface\IMiddleware;
+
+final class AuthMiddlewareService implements IMiddleware
 {
-    public function construct__() {
-        
+    public function run($callback): void
+    {
+        if(isset($_POST['user'])) {
+            $user = $_POST['user'];
+            $password = $_POST['password'];
+
+            var_dump([$user, $password]);die;
+        }
     }
 }
