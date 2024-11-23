@@ -22,7 +22,7 @@ final class HomePageEntity extends HomeRepository
 
     private function validateFormLogin()
     {
-        var_dump($_REQUEST);
+        
     } 
 
     public function viewFront()

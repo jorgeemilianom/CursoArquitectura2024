@@ -1,0 +1,7 @@
+{
+    "usuario": {
+        "nombre": "Jorge",
+        "edad": 30
+    },
+    "token": "abc123"
+}

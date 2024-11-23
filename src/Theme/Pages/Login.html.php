@@ -3,11 +3,10 @@
 use Core\Services\Storage\ContextService;
 
 $Context = ContextService::getContext();
-
+// Sesssion:is_login
 ?>
 
-
-
+<?php if (!$Context->get('Sesssion:is_login')): ?>
 <div class="row">
     <div class="col">
         <form class="mt-4" method="POST">
@@ -25,3 +24,9 @@ $Context = ContextService::getContext();
     <div class="col">
     </div>
 </div>
+<?php else: ?>
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        Bienvenido! Ya estás logueado
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>

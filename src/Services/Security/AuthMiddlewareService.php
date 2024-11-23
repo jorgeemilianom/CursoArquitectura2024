@@ -5,30 +5,31 @@ namespace Core\Services\Security;
 
 use Core\Contracts\Interface\IMiddleware;
 use Core\Services\RequestService;
+use Core\Services\Storage\ContextService;
 
 final class AuthMiddlewareService implements IMiddleware
 {
     public function run($callback): void
     {
+        session_start();
         $this->validateLogin();
     }
 
     public function validateLogin()
     {
+        
         RequestService::request('/Login', function () {
-            if(!isset($_SESSION['User'])) header('Location: /Login');
-        });
-
-        RequestService::request('/Login', function () {
+            $Context = ContextService::getContext();
             if(isset($_POST['user'])) {
                 $user = $_POST['user'];
                 $password = $_POST['password'];
-                session_start();
                 $_SESSION['User'] = $user;
-                var_dump([$user, $password]);die;
+
+                $Context->set('Sesssion:is_login', true);
+            } else {
+                $Context->set('Sesssion:is_login', isset($_SESSION['User']));
+
             }
-            
-            header('Location: /');
-        });
+        }, false);
     }
 }
