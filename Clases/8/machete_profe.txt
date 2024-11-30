@@ -1,0 +1,27 @@
+[10min]         Repaso clase Composer
+    - composer.json
+    - psr-4
+    - namespace
+    - Alias
+    - Uso de librerias
+[15min]         Utilizando variables de entorno
+[15min]         Utilizando services de DB
+[20min]         SESSION
+
+[15min]         Lector de decorators
+[15min]         Login y Auth básica en front
+[15min]         Break
+[15min]         Cache-control
+
+
+
+[15min] Insert, Update, Delete, FindById, FindBy
+[15min] Contact MySQL para métodos Crud
+[15min] Entity User
+[15min] Session persistente en nuestra app
+[15min] ABM de productos
+
+
+[15min]         analizando symfony framework
+[15min]         Levantando un Symfony mediante composer
+[25min]         PHP CLI

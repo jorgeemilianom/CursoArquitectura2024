@@ -10,14 +10,14 @@ use PDO;
 final class MySQLPDOService extends StorageAbstract implements IStorage
 {
     public function __construct() {
-        $host = 'localhost';
-        $dbName = 'curso';
-        $user = 'root';
-        $password = '';
+        $db_host = $_ENV['DB_HOST'];
+        $db_user = $_ENV['DB_USER'];
+        $db_name = $_ENV['DB_NAME'];
+        $db_password = $_ENV['DB_PASSWORD'];
 
-        $dsn = "mysql:host=$host;dbname=$dbName";
+        $dsn = "mysql:host=$db_host;dbname=$db_name";
 
-        $connection = new PDO($dsn, $user, $password);
+        $connection = new PDO($dsn, $db_user, $db_password);
         $this->connectionManager = $connection;
     }
 
