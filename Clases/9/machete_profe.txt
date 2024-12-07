@@ -1,0 +1,16 @@
+[10min]         Repaso clase anterior
+
+[20min]         analizando symfony framework
+[20min]         Levantando un Symfony mediante composer
+[20min]         PHP CLI
+
+
+[20min]         Seguridad en aplicaciones (Auth (Auth Header, api key), Vaidacion Correo/SMS, un integrador (Google Firebase - AWS Cognito))
+[20min]         Seguridad en codigo (SQL Injection, ClossInj, Sanitización de datos, capas de abstracciones para obtención de datos (MELI), Service Middleware CloudFront)
+[15min]         Break
+
+
+[20min]         Buenas practicas en seguridad (evitar consumo directo para SQL, tipado, centralizar el auth para los endpoints, refresh token, $_SESSION auth, versiones actualizadas de un framework)
+[10min]         Migrando a buenas practicas un proyecto existente
+[10min]         Creando productos escalables
+[10min]         Economia de proyectos y tecnologias
